@@ -12,7 +12,9 @@ Descriptive retail sales analysis using the M5 dataset. The project focuses on p
 
 ## Contents
 
-- `01_data_overview.ipynb` — dataset overview, sales dynamics, seasonality, events, prices, top products and ABC analysis.
+- `01_data_overview.ipynb` — dataset overview, events, prices, top products and initial observations.
+- `02_sales_dynamics.ipynb` — daily sales dynamics, weekday patterns and monthly seasonality.
+- `03_inventory_prioritization.ipynb` — category and store priorities plus ABC analysis of products.
 
 ## Data
 
@@ -24,4 +26,4 @@ Python, pandas, NumPy, Matplotlib, Seaborn and Jupyter Notebook.
 
 ## Main findings
 
-FOODS has the largest unit volume, sales differ substantially by store, weekends are stronger than most weekdays, and a relatively focused group of products accounts for most units sold. These patterns support store-specific replenishment, closer monitoring of A-items and preparation for recurring demand peaks.
+FOODS has the largest unit volume, sales differ substantially by store, demand varies by weekday and month, and a relatively focused group of products accounts for most units sold. These patterns support store-specific replenishment, closer monitoring of A-items and preparation for recurring demand peaks. The analysis is descriptive: it does not claim that holidays or high volume prove causation, and it does not train an AI model.
