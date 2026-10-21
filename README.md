@@ -1,30 +1,28 @@
-# Retail Sales Analytics for Inventory Planning
+# Retail Sales and Inventory Planning
 
-Descriptive retail sales analysis using the M5 dataset. The project focuses on practical inventory questions rather than AI or demand forecasting models.
+A Python notebook project using M5 retail sales data. I compare sales across stores, categories and dates, group products by unit volume, and work through a simple stock calculation.
 
-## Questions explored
+## Notebooks
 
-- Which categories and stores generate the most sales?
-- How does demand change by weekday and month?
-- Do recorded holidays and events coincide with different sales levels?
-- Which products drive the largest share of unit volume?
-- How can ABC analysis support inventory prioritization?
+1. `01_data_overview.ipynb`: sales, calendar and price tables; category and store totals; events and ABC groups.
+2. `02_sales_dynamics.ipynb`: daily sales and weekday and monthly averages.
+3. `03_inventory_prioritization.ipynb`: category and store shares, plus product ABC groups.
+4. `04_inventory_planning.ipynb`: a 28-day mean baseline for the next week, a reorder point and a weekly order-up-to calculation.
 
-## Contents
+## Run locally
 
-- `01_data_overview.ipynb` — dataset overview, events, prices, top products and initial observations.
-- `02_sales_dynamics.ipynb` — daily sales dynamics, weekday patterns and monthly seasonality.
-- `03_inventory_prioritization.ipynb` — category and store priorities plus ABC analysis of products.
-- `04_inventory_planning.ipynb` — a transparent 7-day baseline forecast, safety stock, reorder point and example order quantity.
+Use Python 3.10 or newer. Install the packages in `requirements.txt`, then start Jupyter from the project folder and run each notebook from top to bottom. Each notebook loads its own data.
 
-## Data
+Download the [M5 competition data](https://www.kaggle.com/competitions/m5-forecasting-accuracy/data) and put these files in `data/raw/`:
 
-The analysis uses the public [M5 Forecasting dataset](https://www.kaggle.com/competitions/m5-forecasting-accuracy/data). Raw CSV files are not included in this repository because of their size. Download them from Kaggle and place them in `data/raw/`.
+- `sales_train_validation.csv`
+- `calendar.csv`
+- `sell_prices.csv`
 
-## Tools
+The CSV files are not included in the repository. Use the validation sales file: it contains 1,913 observed days. The evaluation file covers a different period.
 
-Python, pandas, NumPy, Matplotlib, Seaborn and Jupyter Notebook.
+## What the analysis covers
 
-## Main findings
+FOODS leads in total units, store volumes differ, and aggregate sales vary by weekday. These are descriptions of recorded sales, not estimates of lost sales or profit. Monthly comparisons do not separate seasonality from trends and sample coverage. Event-day comparisons do not measure causal effects.
 
-FOODS has the largest unit volume, sales differ substantially by store, demand varies by weekday and month, and a relatively focused group of products accounts for most units sold. These patterns support store-specific replenishment, closer monitoring of A-items and preparation for recurring demand peaks. The final notebook demonstrates how to translate these observations into a simple forecast and reorder-point calculation. The analysis is descriptive and planning-oriented: it does not claim that holidays or high volume prove causation, and it does not train an AI model.
+ABC groups use units rather than revenue and combine all stores. The stock calculation uses one high-volume example, assumed lead times and a hypothetical inventory position. Forecast accuracy has not been evaluated on held-out dates, so the calculated order quantity is an example rather than a purchasing recommendation.
