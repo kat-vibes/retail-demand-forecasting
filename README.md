@@ -19,7 +19,7 @@ Download the [M5 competition data](https://www.kaggle.com/competitions/m5-foreca
 - `calendar.csv`
 - `sell_prices.csv`
 
-The CSV files are not included in the repository. Use the validation sales file: it contains 1,913 observed days. The evaluation file covers a different period.
+The CSV files are not included in the repository. 
 
 ## What the analysis covers
 
